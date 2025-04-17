@@ -8,6 +8,4 @@ I will copy the algorithms in terms of input and output whenever possible. I wil
 
 For the *in-place* algorithms in the textbook, the output cannot be in-place as functional programming allow for no side-effects, such that the memory ineffeciency is not matched, and that sometimes the essence of am algoritm is not quite possible to recreate in a functional setting because of this, an example of this is the ```qsort``` function above.
 
-I will compare the length of the algorithms i write to the CLRS pseudocpode and an implementation in python, here i will include spaces (and tabs), and exclude comments, to the best of my ability.
-
 [^1]: https://wiki.haskell.org/Introduction#Quicksort_in_Haskell
