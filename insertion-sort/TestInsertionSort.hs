@@ -1,17 +1,17 @@
-module TestQuickSort where
+module TestInsertionSort where
 
-import QuickSort (quickSort)
+import InsertionSort (insertionSort, insert)
 
 testAssert :: (Ord a, Eq a, Show a) => String -> [a] -> [a] -> IO ()
 testAssert testName input expected =
-    let result = quickSort input
+    let result = insertionSort input
     in if result == expected
         then putStrLn $ "[PASS] " ++ testName
         else putStrLn $ "[FAIL] " ++ testName ++ "\n  Input: " ++ show input ++ "\n  Expected: " ++ show expected ++ "\n  Got: " ++ show result
 
 main :: IO ()
 main = do
-    putStrLn "Running quickSort tests..."
+    putStrLn "Running insertion sort tests..."
     -- Test cases
     testAssert "Empty list" ([] :: [Int]) []
     testAssert "Single element" [42] [42]
