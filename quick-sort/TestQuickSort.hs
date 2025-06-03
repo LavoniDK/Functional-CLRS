@@ -7,8 +7,12 @@ testAssert testName input expected =
     let result = quickSort input
     in if result == expected
         then putStrLn $ "[PASS] " ++ testName
-        else putStrLn $ "[FAIL] " ++ testName ++ "\n  Input: " ++ show input ++ "\n  Expected: " ++ show expected ++ "\n  Got: " ++ show result
-
+        else putStrLn $
+            "[FAIL] " ++ testName
+            ++ "\n  Input: " ++ show input
+            ++ "\n  Expected: " ++ show expected
+            ++ "\n  Got: " ++ show result
+            
 main :: IO ()
 main = do
     putStrLn "Running quickSort tests..."

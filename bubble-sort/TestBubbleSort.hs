@@ -1,10 +1,9 @@
-module TestInsertionSort where
+module TestBubbleSort where
 
-import InsertionSort (insertionSort, insert)
-
+import BubbleSort (bubbleSort)
 testAssert :: (Ord a, Eq a, Show a) => String -> [a] -> [a] -> IO ()
 testAssert testName input expected =
-    let result = insertionSort input
+    let result = bubbleSort input
     in if result == expected
         then putStrLn $ "[PASS] " ++ testName
         else putStrLn $
@@ -12,10 +11,10 @@ testAssert testName input expected =
             ++ "\n  Input: " ++ show input
             ++ "\n  Expected: " ++ show expected
             ++ "\n  Got: " ++ show result
-            
+
 main :: IO ()
 main = do
-    putStrLn "Running insertion sort tests..."
+    putStrLn "Running bubbleSort tests..."
     -- Test cases
     testAssert "Empty list" ([] :: [Int]) []
     testAssert "Single element" [42] [42]

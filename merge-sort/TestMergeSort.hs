@@ -7,10 +7,11 @@ testAssert testName input expected =
     let result = mergeSort input 0 (length input - 1)
     in if result == expected
         then putStrLn $ "[PASS] " ++ testName
-        else putStrLn $ "[FAIL] " ++ testName ++ "\n Input: " ++ show input ++ "\n" ++  
-                                                   " Expected: " ++ show expected ++ "\n" ++  
-                                                   " Got: " ++ show result
-
+        else putStrLn $
+            "[FAIL] " ++ testName
+            ++ "\n  Input: " ++ show input
+            ++ "\n  Expected: " ++ show expected
+            ++ "\n  Got: " ++ show result
 main :: IO ()
 main = do
     putStrLn "Running MergeSort tests..."
