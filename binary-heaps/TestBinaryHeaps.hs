@@ -1,5 +1,4 @@
 module TestBinaryHeaps where
-
 import BinaryHeaps (
     Tree(..), 
     buildMaxHeap,
@@ -19,9 +18,11 @@ testAssert :: (Eq a, Show a) => String -> a -> a -> IO ()
 testAssert testName result expected =
     if result == expected
         then putStrLn $ "[PASS] " ++ testName
-        else putStrLn $ "[FAIL] " ++ testName ++
-                        "\n  Expected: " ++ show expected ++
-                        "\n  Got:      " ++ show result
+        else putStrLn $
+            "[FAIL] " ++ testName
+            ++ "\n  Input: " ++ show input
+            ++ "\n  Expected: " ++ show expected
+            ++ "\n  Got: " ++ show result
 
 main :: IO ()
 main = do

@@ -1,5 +1,4 @@
 module TestMergeSort where
-
 import MergeSort (mergeSort, merge)
 
 testAssert :: (Ord a, Eq a, Show a) => String -> [a] -> [a] -> IO ()
@@ -12,6 +11,7 @@ testAssert testName input expected =
             ++ "\n  Input: " ++ show input
             ++ "\n  Expected: " ++ show expected
             ++ "\n  Got: " ++ show result
+
 main :: IO ()
 main = do
     putStrLn "Running MergeSort tests..."

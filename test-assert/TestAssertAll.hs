@@ -1,11 +1,11 @@
-module Test<module> where
+module Test<Module> where
 
-import <module> (<module1>, <module2>)
+import <Module> (<module1>, <module2>)
 
--- General test runner for a given <module>‐evaluation function
+-- General test runner for a given <Module>‐evaluation function
 testAssertWith :: (Eq a, Show a, Num a) => String -> ([a] -> a -> a) -> [a] -> a -> a -> IO ()
-testAssertWith testName <module>Fn coeffs x expected =
-    let result = <module>Fn coeffs x
+testAssertWith testName <Module>Fn coeffs x expected =
+    let result = <Module>Fn coeffs x
     in if result == expected
           then putStrLn $ "[PASS] " ++ testName
           else putStrLn $
@@ -17,7 +17,7 @@ testAssertWith testName <module>Fn coeffs x expected =
 
 main :: IO ()
 main = do
-    putStrLn "Running <module> tests..."
+    putStrLn "Running <Module> tests..."
     let test f label = testAssertWith (label ++ " — " ++ f)
                                        (if f == "<module1>" then <module1> else <module2>)
 

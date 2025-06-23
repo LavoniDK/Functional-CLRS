@@ -1,6 +1,6 @@
 module TestBubbleSort where
-
 import BubbleSort (bubbleSort)
+
 testAssert :: (Ord a, Eq a, Show a) => String -> [a] -> [a] -> IO ()
 testAssert testName input expected =
     let result = bubbleSort input
